@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>成員介紹 - HYS select shop</title>
+    <link rel="shortcut icon" href="photos/logo2.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .ml2 {
+            opacity: 0;
+        }
+        
+        .team-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .team-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 50px;
+            color: #000;
+            font-family: var(--font-heading);
+        }
+        
+        .member-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .member-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #000;
+            font-family: var(--font-heading);
+        }
+        
+        .member-ratio {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .member-description {
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #333;
+            text-align: justify;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="alert alert-success mb-0 d-flex justify-content-center align-items-center"
+        style="background-color:#ffffff;border:none;min-height: 100px;">
+        <h1 class="ml2 text-fantasy mb-0">HYS select shop</h1>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <script>
+            var textWrapper = document.querySelector('.ml2');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+            document.querySelector('.ml2').style.opacity = 1;
+            anime.timeline({ loop: true })
+                .add({
+                    targets: '.ml2 .letter',
+                    scale: [4, 1],
+                    opacity: [0, 1],
+                    translateZ: 0,
+                    easing: "easeOutExpo",
+                    duration: 950,
+                    delay: (el, i) => 70 * i
+                }).add({
+                    targets: '.ml2',
+                    opacity: 0,
+                    duration: 1000,
+                    easing: "easeOutExpo",
+                    delay: 1000
+                });
+        </script>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img id="img01" src="photos/logo2.png" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNavbar">
+                <i class="fas fa-bars" style="font-size:25px;color: #5c412f"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="collapseNavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-fantasy" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                            <b>本月促銷</b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item text-fantasy" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'top'); return false;">Top</a>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">服飾</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="drew house.html">Drew House</a></li>
+                                    <li><a class="dropdown-item" href="stussy.html">STUSSY</a></li>
+                                    <li><a class="dropdown-item" href="fog.html">FOG ESSENTIALS</a></li>
+                                    <li><a class="dropdown-item" href="human.html">HumanMade</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">配飾</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="hat.html">帽子</a></li>
+                                    <li><a class="dropdown-item" href="bag.html">背包</a></li>
+                                    <li><a class="dropdown-item" href="shoses.html">鞋子</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><b>所有商品</b></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'Supreme'); return false;">Supreme</a></li>
+                            <li><a class="dropdown-item" href="stussy.html">STUSSY</a></li>
+                            <li><a class="dropdown-item" href="drew house.html">Drew House</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'Ami Paris'); return false;">Ami Paris</a></li>
+                            <li><a class="dropdown-item" href="fog.html">Fear Of Gog</a></li>
+                            <li><a class="dropdown-item" href="human.html">Human Made</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'OFF White'); return false;">OFF White</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'ADIDAS'); return false;">ADIDAS</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'NIKE'); return false;">NIKE</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'PUMA'); return false;">PUMA</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'BE@RBRICK'); return false;">BE@RBRICK</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><b>POPMART</b></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'MOLLY'); return false;">MOLLY</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'PUCKY'); return false;">PUCKY</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'DIMOO'); return false;">DIMOO</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'SKULLPANDA'); return false;">SKULLPANDA</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'DIANEY'); return false;">DIANEY</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'MINIONS'); return false;">MINIONS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><b>鞋子</b></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'ADIDAS'); return false;">ADIDAS</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'NIKE'); return false;">NIKE</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'CONVERSE'); return false;">CONVERSE</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'PUMA'); return false;">PUMA</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'UNDER ARMOUR'); return false;">UNDER ARMOUR</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'YEEZY BOOST'); return false;">YEEZY BOOST</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'JORDAN'); return false;">JORDAN</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-fantasy" href="search.html?q=sale" onclick="sessionStorage.setItem('searchQuery', 'sale'); return false;">Sale</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-fantasy" href="team.html">成員介紹</a>
+                    </li>
+                </ul>
+                <form class="d-flex" id="search-form" onsubmit="return handleSearch(event)">
+                    <div class="input-group">
+                        <input class="form-control" type="search" id="search-input" placeholder="Search" aria-label="Search">
+                        <button class="btn button01" type="submit"><img src="photos/search.png" height="20px"></button>
+                    </div>
+                </form>
+                <div class="d-flex align-items-center ms-2">
+                    <a href="member.html" class="px-1"><img style="height: 25px;" src="photos/user.png"></a>
+                    <a href="customerservice.html" class="px-1"><img style="height: 25px;" src="photos/call.png"></a>
+                    <a href="cart.html" class="px-1 position-relative">
+                        <img style="height: 25px;" src="photos/cart.png">
+                        <span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">0</span>
+                    </a>
+                    <a href="wishlist.html" class="px-1 position-relative">
+                        <img style="height: 25px;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B2EBF2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'/%3E%3C/svg%3E" alt="收藏">
+                        <span id="wishlist-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">0</span>
+                    </a>
+                    <a href="Javascript:void(0);" onclick="handleLanguageSwitch(); return false;" class="px-1" title="切換語言"><img style="height: 25px;" src="photos/globe.png"></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 組員介紹內容 -->
+    <div class="team-container">
+        <h1 class="team-title">成員介紹</h1>
+        
+        <div class="container">
+            <div class="row g-4">
+                <!-- 組員 1: 張瑋鐘 -->
+                <div class="col-md-6">
+                    <div class="member-card">
+                        <div class="member-name">張瑋鐘</div>
+                        <div class="member-ratio">分工比例: 31%</div>
+                        <div class="member-description">
+                            這學期的多媒體程式設計課程對我而言，是一段充滿挑戰但也極具成就感的旅程。身為負責 JavaScript 邏輯與檔案整合的角色，我從中深刻體會到前端開發不僅是畫面的呈現，更是資料流動的控管。起初在實作購物車與收藏功能時，我面臨了在缺乏後端資料庫支援下，網頁重新整理或跳轉頁面後資料就會重置的難題。這讓我必須跳脫原本單純操作 DOM 的思維。我成功模擬了資料庫的持久化功能，解決了跨頁面資料同步與導覽列即時更新的問題。這個過程讓我從過去單純依賴教學範例，轉變為能主動思考前端資料生命週期的架構設計。雖然 JavaScript 的邏輯除錯仍具難度，但看著自己寫出的程式碼能讓網站功能流暢運作，這份實作經驗不僅提升了我的技術能力，更成為我未來深入探索前端工程的重要基石。
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 組員 2: 陳柏樺 -->
+                <div class="col-md-6">
+                    <div class="member-card">
+                        <div class="member-name">陳柏樺</div>
+                        <div class="member-ratio">分工比例: 32%</div>
+                        <div class="member-description">
+                            這學期的多媒體程式設計課對我來說是一門充滿挑戰卻收穫很多的課程，雖然在實作與小考中常會卡關，整體仍有進步空間，但卻是我所有輔系課程中最喜歡的一門。透過一步步使用 HTML、CSS 與 JavaScript 架設網頁，我真正理解了前端是如何被建構出來的，也從過去依賴教學與 AI，轉變為能從空白檔案開始思考結構並實際寫出程式碼。雖然 JavaScript 對我來說仍較困難，需要更多時間練習，但這堂課讓我不再只是看得懂程式，而是開始真正寫得出來，這份成長也成為我未來繼續學習前端的重要動力。
+                            在製作電腦版電商網站的過程中，我發現即使只針對桌機畫面設計，CSS 版面仍然容易出現跑掉的情況。當畫面解析度不同、瀏覽器視窗大小改變，或是實際商品資料與預期不一致時，原本看起來正常的版面就可能出現對齊錯誤、內容溢出或區塊間距不一致的問題。
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 組員 3: 黃恩國 -->
+                <div class="col-md-6">
+                    <div class="member-card">
+                        <div class="member-name">黃恩國</div>
+                        <div class="member-ratio">分工比例: 25%</div>
+                        <div class="member-description">
+                            在製作期末專題的過程中，我深刻感受到同學們都好厲害。他們都能夠自學並運用課程中沒有教過的內容，讓整體報告在完成基本功能之外，品質也提升了不少。相較之下，我也意識到自己在前端能力上仍有很大的進步空間。由於我是輔系生，這次在專題的程式撰寫部分幾乎幫不上忙，但我希望自己可以盡力在其他方面做出貢獻，例如協助檢視內容是否有需要改進的地方、整理文字資料，以及完成自己能力所及的工作。同時，我也嘗試理解組員們所負責的程式內容，從中學習。整體而言，我很慶幸能夠和一群認真又給力的組員一起合作，讓這次的專題能愉快的完成。
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 組員 4: 簡揚軒 -->
+                <div class="col-md-6">
+                    <div class="member-card">
+                        <div class="member-name">簡揚軒</div>
+                        <div class="member-ratio">分工比例: 12%</div>
+                        <div class="member-description">
+                            這學期的多媒體程式設計課程，對我而言是一場從「視覺思維」轉向「邏輯架構」的訓練。在參與製作電商網站的過程中，我深刻體會到網頁設計並不像平面設計那樣，將元素擺放好就會永遠固定不動。相反地，程式碼構建出的是一個「動態的容器」，必須要能包容各種變數。
+                        以前瀏覽網頁時，覺得一切理所當然，自己動手寫才發現，要讓一個版面在不同情況下都保持美觀，需要極為細膩的 CSS 佈局邏輯。這門課最大的收穫，不僅是學會了語法，更是培養了「預判問題」的能力，在寫下一行程式碼前，先思考這個區塊如果文字變多怎麼辦？如果螢幕變窄怎麼辦？這種在挫折中不斷除錯、修正的過程，雖然痛苦，但當看到網站最終能良好呈現時，那份成就感是其他課程難以比擬的。
+                        在開發網站的過程中，我遇到了一些技術挑戰，這也讓我對 CSS 的運作機制有了更深的理解：
+                        1. 真實資料導致的版面崩壞
+                        在初期，我使用固定的測試文字與圖片，畫面看起來非常整齊。但當我們嘗試填入真實的商品資料時，問題就浮現了：
+                        卡片高度不一： 由於每項商品的名稱長短差異，導致並排的商品卡片高度參差不齊，下方的按鈕也無法對齊，那就破壞了原本的視覺。
+                        圖片比例變形： 即使設定了圖片寬度，但因為原始圖片的長寬比不一致，硬性縮放後常常造成圖片變形失真。
+                        2.解析度適應不良： 雖然是做電腦版，但在我的螢幕上調整好的間距，換到解析度較小的筆電上時，版面就會變得過於擁擠甚至重疊。這讓我學到在佈局時，不能過度依賴絕對的 px 數值，而需要更多考慮相對單位與整體結構的彈性。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer-section container-fluid">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-3 footer-col">
+                <h1>關於商店</h1>
+                <p class="p1">
+                    位址 <img src="photos/shop.png" style="width:15px"> 桃園市中壢區中北路200號<br>
+                    電話 <img src="photos/phone.png" style="width:15px"> (02)2538-1111
+                </p>
+            </div>
+            <div class="col-md-3 footer-col">
+                <h1>會員中心</h1>
+                <p class="p1">
+                    <a href="index.html#promotions" class="text-decoration-none text-white">優惠專區</a><br>
+                    <a href="member.html" class="text-decoration-none text-white">專屬優惠</a><br>
+                    <a href="member.html" class="text-decoration-none text-white">紅利點數</a>
+                </p>
+            </div>
+            <div class="col-md-3 footer-col">
+                <h1>社群媒體</h1>
+                <p class="p1">
+                    <a href="https://www.facebook.com" target="_blank" class="text-decoration-none text-white">
+                        <img src="photos/fb.png" style="width:20px;margin-left:5px;"> Facebook
+                    </a><br>
+                    <a href="https://www.instagram.com" target="_blank" class="text-decoration-none text-white">
+                        <img src="photos/ig.png" style="width:20px;margin-left:5px;"> Instagram
+                    </a>
+                </p>
+            </div>
+            <div class="col-md-3 footer-col">
+                <h1>常見問題</h1>
+                <p class="p1">
+                    <a href="customerservice.html" class="text-decoration-none text-white">買家詢問</a><br>
+                    <span>開店時間：週一至週日 10:00-22:00</span><br>
+                    <span>參觀時間：歡迎隨時參觀</span>
+                </p>
+            </div>
+            <div class="col-12 text-center mt-3">
+                <img src="photos/logo.gif" style="width:300px; max-width: 100%;">
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/cart.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/language.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HYS select shop</title>
+    <link rel="shortcut icon" href="photos/logo2.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* Specific page override if needed for js animation hook */
+        .ml2 {
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!--店名-->
+    <div class="alert alert-success mb-0 d-flex justify-content-center align-items-center"
+        style="background-color:#ffffff;border:none;min-height: 100px;">
+
+        <h1 class="ml2 text-fantasy mb-0">HYS select shop</h1>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+        <script>
+            // Wrap every letter in a span
+            var textWrapper = document.querySelector('.ml2');
+            textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+            // Reset opacity for JS animation
+            document.querySelector('.ml2').style.opacity = 1;
+
+            anime.timeline({ loop: true })
+                .add({
+                    targets: '.ml2 .letter',
+                    scale: [4, 1],
+                    opacity: [0, 1],
+                    translateZ: 0,
+                    easing: "easeOutExpo",
+                    duration: 950,
+                    delay: (el, i) => 70 * i
+                }).add({
+                    targets: '.ml2',
+                    opacity: 0,
+                    duration: 1000,
+                    easing: "easeOutExpo",
+                    delay: 1000
+                });
+        </script>
+
+    </div>
+    <div class="alert alert-dark alert-dismissible fade show mb-0 text-white" role="alert"
+        style="background-color:#2f2d31; border: none;">
+        <!--跑馬燈-->
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"></button>
+        <marquee>
+            <span class="text-fantasy">Have Your Say!</span>
+            <b class="text-kai">各種潮流商品！</b>
+        </marquee>
+    </div>
+
+    <!-- A grey horizontal navbar that becomes vertical on small screens -->
+    <nav class="navbar navbar-expand-md sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><img id="img01" src="photos/logo2.png" alt="Logo"></a>
+            <!--hamburger icon-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNavbar">
+                <i class="fas fa-bars" style="font-size:25px;color: #5c412f"></i>
+            </button>
+            <!--Links-->
+            <div class="collapse navbar-collapse" id="collapseNavbar">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-fantasy" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">
+                            <b>本月促銷</b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item text-fantasy" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'top'); return false;">Top</a>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">服飾</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="drew house.html">Drew House</a></li>
+                                    <li><a class="dropdown-item" href="stussy.html">STUSSY</a></li>
+                                    <li><a class="dropdown-item" href="fog.html">FOG ESSENTIALS</a></li>
+                                    <li><a class="dropdown-item" href="human.html">HumanMade</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item dropdown-toggle" href="#">配飾</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="hat.html">帽子</a></li>
+                                    <li><a class="dropdown-item" href="bag.html">背包</a></li>
+                                    <li><a class="dropdown-item" href="shoses.html">鞋子</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><b>所有商品</b></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'Supreme'); return false;">Supreme</a></li>
+                            <li><a class="dropdown-item" href="stussy.html">STUSSY</a></li>
+                            <li><a class="dropdown-item" href="drew house.html">Drew House</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'Ami Paris'); return false;">Ami Paris</a></li>
+                            <li><a class="dropdown-item" href="fog.html">Fear Of Gog</a></li>
+                            <li><a class="dropdown-item" href="human.html">Human Made</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'OFF White'); return false;">OFF White</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'ADIDAS'); return false;">ADIDAS</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'NIKE'); return false;">NIKE</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'PUMA'); return false;">PUMA</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'BE@RBRICK'); return false;">BE@RBRICK</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><b>POPMART</b></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'MOLLY'); return false;">MOLLY</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'PUCKY'); return false;">PUCKY</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'DIMOO'); return false;">DIMOO</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'SKULLPANDA'); return false;">SKULLPANDA</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'DIANEY'); return false;">DIANEY</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'MINIONS'); return false;">MINIONS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><b>鞋子</b></a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'ADIDAS'); return false;">ADIDAS</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'NIKE'); return false;">NIKE</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'CONVERSE'); return false;">CONVERSE</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'PUMA'); return false;">PUMA</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'UNDER ARMOUR'); return false;">UNDER ARMOUR</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'YEEZY BOOST'); return false;">YEEZY BOOST</a></li>
+                            <li><a class="dropdown-item" href="search.html" onclick="sessionStorage.setItem('searchQuery', 'JORDAN'); return false;">JORDAN</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-fantasy" href="search.html?q=sale" onclick="sessionStorage.setItem('searchQuery', 'sale'); return false;">Sale</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-fantasy" href="team.html">成員介紹</a>
+                    </li>
+                </ul>
+                <!--search-->
+                <form class="d-flex" id="search-form" onsubmit="return handleSearch(event)">
+                    <div class="input-group">
+                        <input class="form-control" type="search" id="search-input" placeholder="Search" aria-label="Search">
+                        <button class="btn button01" type="submit"><img src="photos/search.png" height="20px"></button>
+                    </div>
+                </form>
+                <div class="d-flex align-items-center ms-2">
+                    <a href="member.html" class="px-1"><img style="height: 25px;" src="photos/user.png"></a>
+                    <a href="customerservice.html" class="px-1"><img style="height: 25px;" src="photos/call.png"></a>
+                    <a href="cart.html" class="px-1 position-relative">
+                        <img style="height: 25px;" src="photos/cart.png">
+                        <span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">0</span>
+                    </a>
+                    <a href="wishlist.html" class="px-1 position-relative">
+                        <img style="height: 25px;" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23B2EBF2' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'/%3E%3C/svg%3E" alt="收藏">
+                        <span id="wishlist-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="display: none;">0</span>
+                    </a>
+                    <a href="Javascript:void(0);" onclick="handleLanguageSwitch(); return false;" class="px-1" title="切換語言"><img style="height: 25px;"
+                            src="photos/globe.png"></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+        <!-- Carousel -->
+        <div id="demo" class="carousel slide" data-bs-ride="carousel">
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="dot active"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="1" class="dot"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="2" class="dot"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="3" class="dot"></button>
+                <button type="button" data-bs-target="#demo" data-bs-slide-to="4" class="dot"></button>
+            </div>
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="2000">
+                    <a href="drew house.html">
+                        <img src="photos/drew8.jpg" alt="Ethereal Clothing Store" class="d-block w-100">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3 class="text-fantasy">HYS select shop</h3>
+                            <p>Drew house</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <a href="fog.html">
+                        <img src="photos/fog8.jpg" alt="various" class="d-block w-100">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3 class="text-fantasy">HYS select shop</h3>
+                            <p>Fear OF God</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <a href="stussy.html">
+                        <img src="photos/ami8.jpg" alt="quality" class="d-block w-100">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3 class="text-fantasy">HYS select shop</h3>
+                            <p>STUSSY</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <a href="human.html">
+                        <img src="photos/human8.jpg" alt="fit" class="d-block w-100">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3 class="text-fantasy">HYS select shop</h3>
+                            <p>Human Made</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <a href="search.html" onclick="sessionStorage.setItem('searchQuery', 'Ami Paris'); return true;">
+                        <img src="photos/ami10.jpg" alt="conspicuous" class="d-block w-100">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h3 class="text-fantasy">HYS select shop</h3>
+                            <p>Ami Paris</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="section-header-dark text-center mt-4">
+        <h4><b>熱門品牌</b></h4>
+    </div>
+
+    <div class="container text-center">
+        <div class="row g-4 justify-content-center">
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card product-card">
+                    <a href="https://thehouseofdrew.com/en-tw">
+                        <img class="card-img-top" src="photos/drew logo.jpg" alt="Drew House">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title text-dark">Drew House</h4>
+                        <p class="card-text text-secondary">Drew House</p>
+                        <button class="btn btn-primary" onclick="addBrandToWishlist('Drew House', 'Drew House', 'photos/drew logo.jpg')">收藏</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card product-card">
+                    <a href="https://fearofgod.com/">
+                        <img class="card-img-top" src="photos/fog.webp" alt="FOG">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title text-dark">FOG</h4>
+                        <p class="card-text text-secondary">Fear OF God</p>
+                        <button class="btn btn-primary" onclick="addBrandToWishlist('FOG', 'Fear OF God', 'photos/fog.webp')">收藏</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card product-card">
+                    <a href="https://jp.supreme.com/">
+                        <img class="card-img-top" src="photos/Supreme-Logo.png" alt="Supreme">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title text-dark">Supreme</h4>
+                        <p class="card-text text-secondary">Supreme</p>
+                        <button class="btn btn-primary" onclick="addBrandToWishlist('Supreme', 'Supreme', 'photos/Supreme-Logo.png')">收藏</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card product-card">
+                    <a href="https://www.amiparis.com/tw/">
+                        <img class="card-img-top" src="photos/ami logo.jpg" alt="AmiParis">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title text-dark">AmiParis</h4>
+                        <p class="card-text text-secondary">Ami Paris</p>
+                        <button class="btn btn-primary" onclick="addBrandToWishlist('AmiParis', 'Ami Paris', 'photos/ami logo.jpg')">收藏</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card product-card">
+                    <a href="https://humanmade.jp/" target="_blank">
+                        <img class="card-img-top" src="photos/human logo.jpg" alt="HumanMade">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title text-dark">humanmade</h4>
+                        <p class="card-text text-secondary">Human Made</p>
+                        <button class="btn btn-primary" onclick="addBrandToWishlist('HumanMade', 'Human Made', 'photos/human logo.jpg')">收藏</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card product-card">
+                    <a href="https://www.off---white.com/cn-tw/" target="_blank">
+                        <img class="card-img-top" src="photos/off logo.png" alt="Off White">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title text-dark">off-white</h4>
+                        <p class="card-text text-secondary">OFF White</p>
+                        <button class="btn btn-primary" onclick="addBrandToWishlist('OFF White', 'OFF White', 'photos/off logo.png')">收藏</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card product-card">
+                    <a href="http://www.bearbrick.com/" target="_blank">
+                        <img class="card-img-top" src="photos/bear logo.png" alt="Bearbrick">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title text-dark">bearbrick</h4>
+                        <p class="card-text text-secondary">Be@rbeick</p>
+                        <button class="btn btn-primary" onclick="addBrandToWishlist('BE@RBRICK', 'BE@RBRICK', 'photos/bear logo.png')">收藏</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="card product-card">
+                    <a href="https://www.we11-done.com/" target="_blank">
+                        <img class="card-img-top" src="photos/WE11DONE_logo.png" alt="We11done">
+                    </a>
+                    <div class="card-body">
+                        <h4 class="card-title text-dark">we11-done</h4>
+                        <p class="card-text text-secondary">we11done</p>
+                        <button class="btn btn-primary" onclick="addBrandToWishlist('we11-done', 'we11done', 'photos/WE11DONE_logo.png')">收藏</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-header-dark text-center mt-5">
+        <h4><b>熱賣商品</b></h4>
+    </div>
+
+    <div class="container text-center">
+        <div class="row g-4 justify-content-center">
+            <!-- Product 1 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card p-3 rounded border">
+                    <div class="product-image-container">
+                        <a href="product-detail.html?id=drew-001">
+                            <img src="photos/drew.jpg" class="img-fluid mb-3">
+                        </a>
+                        <button class="wishlist-btn" data-product-id="drew-001" onclick="toggleProductWishlist('drew-001', {id: 'drew-001', name: 'Drew House', brand: 'Drew House', description: '笑臉滿月狼', price: 2800, image: 'photos/drew.jpg'}); return false;">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div><b>Drew House</b></div>
+                    <div class="text-secondary mb-2">笑臉滿月狼</div>
+                    <div class="text-primary mb-3"><strong>NT$ 2,800</strong></div>
+                    <button class="btn-custom-cart w-100" onclick="addToCart({id: 'drew-001', name: 'Drew House', brand: 'Drew House', description: '笑臉滿月狼', price: 2800, image: 'photos/drew.jpg'})">
+                        <img style="height: 18px;" src="photos/buy.png"> 加入購物車
+                    </button>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card p-3 rounded border">
+                    <div class="product-image-container">
+                        <a href="product-detail.html?id=drew-002">
+                            <img src="photos/drew1.jpg" class="img-fluid mb-3">
+                        </a>
+                        <button class="wishlist-btn" data-product-id="drew-002" onclick="toggleProductWishlist('drew-002', {id: 'drew-002', name: 'Drew House', brand: 'Drew House', description: '日本限定款', price: 3200, image: 'photos/drew1.jpg'}); return false;">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div><b>Drew House</b></div>
+                    <div class="text-secondary mb-2">日本限定款</div>
+                    <div class="text-primary mb-3"><strong>NT$ 3,200</strong></div>
+                    <button class="btn-custom-cart w-100" onclick="addToCart({id: 'drew-002', name: 'Drew House', brand: 'Drew House', description: '日本限定款', price: 3200, image: 'photos/drew1.jpg'})">
+                        <img style="height: 18px;" src="photos/buy.png"> 加入購物車
+                    </button>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card p-3 rounded border">
+                    <div class="product-image-container">
+                        <a href="product-detail.html?id=fog-001">
+                            <img src="photos/fog.jpg" class="img-fluid mb-3">
+                        </a>
+                        <button class="wishlist-btn" data-product-id="fog-001" onclick="toggleProductWishlist('fog-001', {id: 'fog-001', name: 'FOG Essentials 2023', brand: 'FOG Essentials', description: '大LOGO 黑', price: 4500, image: 'photos/fog.jpg'}); return false;">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div><b>FOG Essentials 2023</b></div>
+                    <div class="text-secondary mb-2">大LOGO 黑</div>
+                    <div class="text-primary mb-3"><strong>NT$ 4,500</strong></div>
+                    <button class="btn-custom-cart w-100" onclick="addToCart({id: 'fog-001', name: 'FOG Essentials 2023', brand: 'FOG Essentials', description: '大LOGO 黑', price: 4500, image: 'photos/fog.jpg'})">
+                        <img style="height: 18px;" src="photos/buy.png"> 加入購物車
+                    </button>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card p-3 rounded border">
+                    <div class="product-image-container">
+                        <a href="product-detail.html?id=fog-002">
+                            <img src="photos/fog1.jpg" class="img-fluid mb-3">
+                        </a>
+                        <button class="wishlist-btn" data-product-id="fog-002" onclick="toggleProductWishlist('fog-002', {id: 'fog-002', name: 'FOG Essentials 2023', brand: 'FOG Essentials', description: '大LOGO 蛋白', price: 4500, image: 'photos/fog1.jpg'}); return false;">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div><b>FOG Essentials 2023</b></div>
+                    <div class="text-secondary mb-2">大LOGO 蛋白</div>
+                    <div class="text-primary mb-3"><strong>NT$ 4,500</strong></div>
+                    <button class="btn-custom-cart w-100" onclick="addToCart({id: 'fog-002', name: 'FOG Essentials 2023', brand: 'FOG Essentials', description: '大LOGO 蛋白', price: 4500, image: 'photos/fog1.jpg'})">
+                        <img style="height: 18px;" src="photos/buy.png"> 加入購物車
+                    </button>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card p-3 rounded border">
+                    <div class="product-image-container">
+                        <a href="product-detail.html?id=human-001">
+                            <img src="photos/human.jpg" class="img-fluid mb-3">
+                        </a>
+                        <button class="wishlist-btn" data-product-id="human-001" onclick="toggleProductWishlist('human-001', {id: 'human-001', name: 'HumanMade 2023-05', brand: 'Human Made', description: '兔兔草', price: 3800, image: 'photos/human.jpg'}); return false;">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div><b>HumanMade 2023-05</b></div>
+                    <div class="text-secondary mb-2">兔兔草</div>
+                    <div class="text-primary mb-3"><strong>NT$ 3,800</strong></div>
+                    <button class="btn-custom-cart w-100" onclick="addToCart({id: 'human-001', name: 'HumanMade 2023-05', brand: 'Human Made', description: '兔兔草', price: 3800, image: 'photos/human.jpg'})">
+                        <img style="height: 18px;" src="photos/buy.png"> 加入購物車
+                    </button>
+                </div>
+            </div>
+            <!-- Product 6 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card p-3 rounded border">
+                    <div class="product-image-container">
+                        <a href="product-detail.html?id=human-002">
+                            <img src="photos/human1.jpg" class="img-fluid mb-3">
+                        </a>
+                        <button class="wishlist-btn" data-product-id="human-002" onclick="toggleProductWishlist('human-002', {id: 'human-002', name: 'HumanMade 2022-36 I know Nigo', brand: 'Human Made', description: '魔毯狗狗', price: 4200, image: 'photos/human1.jpg'}); return false;">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div><b>HumanMade 2022-36 I know Nigo</b></div>
+                    <div class="text-secondary mb-2">魔毯狗狗</div>
+                    <div class="text-primary mb-3"><strong>NT$ 4,200</strong></div>
+                    <button class="btn-custom-cart w-100" onclick="addToCart({id: 'human-002', name: 'HumanMade 2022-36 I know Nigo', brand: 'Human Made', description: '魔毯狗狗', price: 4200, image: 'photos/human1.jpg'})">
+                        <img style="height: 18px;" src="photos/buy.png"> 加入購物車
+                    </button>
+                </div>
+            </div>
+            <!-- Product 7 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card p-3 rounded border">
+                    <div class="product-image-container">
+                        <a href="product-detail.html?id=stussy-001">
+                            <img src="photos/ami.jpg" class="img-fluid mb-3">
+                        </a>
+                        <button class="wishlist-btn" data-product-id="stussy-001" onclick="toggleProductWishlist('stussy-001', {id: 'stussy-001', name: 'STUSSY', brand: 'STUSSY', description: 'POP TOP TEE', price: 2200, image: 'photos/ami.jpg'}); return false;">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div><b>STUSSY</b></div>
+                    <div class="text-secondary mb-2">POP TOP TEE</div>
+                    <div class="text-primary mb-3"><strong>NT$ 2,200</strong></div>
+                    <button class="btn-custom-cart w-100" onclick="addToCart({id: 'stussy-001', name: 'STUSSY', brand: 'STUSSY', description: 'POP TOP TEE', price: 2200, image: 'photos/ami.jpg'})">
+                        <img style="height: 18px;" src="photos/buy.png"> 加入購物車
+                    </button>
+                </div>
+            </div>
+            <!-- Product 8 -->
+            <div class="col-sm-6 col-md-4 col-lg-3">
+                <div class="product-card p-3 rounded border">
+                    <div class="product-image-container">
+                        <a href="product-detail.html?id=stussy-002">
+                            <img src="photos/ami1.jpg" class="img-fluid mb-3">
+                        </a>
+                        <button class="wishlist-btn" data-product-id="stussy-002" onclick="toggleProductWishlist('stussy-002', {id: 'stussy-002', name: 'STUSSY', brand: 'STUSSY', description: 'CLUB PIGMENT DYED TEE', price: 2400, image: 'photos/ami1.jpg'}); return false;">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <div><b>STUSSY</b></div>
+                    <div class="text-secondary mb-2">CLUB PIGMENT DYED TEE</div>
+                    <div class="text-primary mb-3"><strong>NT$ 2,400</strong></div>
+                    <button class="btn-custom-cart w-100" onclick="addToCart({id: 'stussy-002', name: 'STUSSY', brand: 'STUSSY', description: 'CLUB PIGMENT DYED TEE', price: 2400, image: 'photos/ami1.jpg'})">
+                        <img style="height: 18px;" src="photos/buy.png"> 加入購物車
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-section container-fluid">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-3 footer-col">
+                <h1>關於商店</h1>
+                <p class="p1">
+                    位址 <img src="photos/shop.png" style="width:15px"> 桃園市中壢區中北路200號<br>
+                    電話 <img src="photos/phone.png" style="width:15px"> (02)2538-1111
+                </p>
+            </div>
+            <div class="col-md-3 footer-col">
+                <h1>會員中心</h1>
+                <p class="p1">
+                    <a href="index.html#promotions" class="text-decoration-none text-white">優惠專區</a><br>
+                    <a href="member.html" class="text-decoration-none text-white">專屬優惠</a><br>
+                    <a href="member.html" class="text-decoration-none text-white">紅利點數</a>
+                </p>
+            </div>
+            <div class="col-md-3 footer-col">
+                <h1>社群媒體</h1>
+                <p class="p1">
+                    <a href="https://www.facebook.com" target="_blank" class="text-decoration-none text-white">
+                        <img src="photos/fb.png" style="width:20px;margin-left:5px;"> Facebook
+                    </a><br>
+                    <a href="https://www.instagram.com" target="_blank" class="text-decoration-none text-white">
+                        <img src="photos/ig.png" style="width:20px;margin-left:5px;"> Instagram
+                    </a>
+                </p>
+            </div>
+            <div class="col-md-3 footer-col">
+                <h1>常見問題</h1>
+                <p class="p1">
+                    <a href="customerservice.html" class="text-decoration-none text-white">買家詢問</a><br>
+                    <span>開店時間：週一至週日 10:00-22:00</span><br>
+                    <span>參觀時間：歡迎隨時參觀</span>
+                </p>
+            </div>
+            <div class="col-12 text-center mt-3">
+                <img src="photos/logo.gif" style="width:300px; max-width: 100%;">
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/cart.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/language.js"></script>
+    <script>
+        // 品牌收藏功能
+        function addBrandToWishlist(name, brand, image) {
+            addToWishlist({
+                id: 'brand-' + name.toLowerCase().replace(/\s+/g, '-'),
+                name: name,
+                brand: brand,
+                description: brand,
+                price: 0,
+                image: image,
+                category: '品牌'
+            });
+        }
+        
+        // 頁面載入後初始化所有收藏圖標
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                if (typeof initProductWishlistIcons === 'function') {
+                    initProductWishlistIcons();
+                }
+            }, 100);
+        });
+    </script>
+</body>
+
+</html>

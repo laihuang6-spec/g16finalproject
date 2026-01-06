@@ -1,0 +1,47 @@
+.button01 {
+  background-color: #d8f9fd;
+}
+h1 {
+  color: #000000;
+}
+.p1 {
+  color: white;
+}
+h2 {
+  color: white;
+  font-size: 30px;
+  background-color: #333333; /*主選單下面標題*/
+  font-family: 標楷體;
+}
+h3 {
+  color: #ffffff;
+  font-size: 20px;
+  font-family: fantasy;
+}
+h4 {
+  color: #ffffff;
+}
+.form-control {
+  width: 300px;
+}
+.form-select {
+  width: 300px;
+}
+.p02 {
+  color: #000000;
+}
+.ml13 {
+  font-size: 1.9em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font-weight: 600;
+}
+
+.ml13 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
